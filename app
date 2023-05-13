@@ -1,0 +1,12 @@
+runtime: php55
+
+handlers:
+- url: /static/*
+  static_dir: static
+  
+- url: /static/(.*\.(gif|png|jpg))
+  static_files: static/\1
+  upload: static/(.*\.(gif|png|jpg))
+  
+- url: /.*
+  script: project1.html
